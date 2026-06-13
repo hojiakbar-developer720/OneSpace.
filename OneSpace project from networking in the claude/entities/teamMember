@@ -1,0 +1,72 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "role": {
+      "type": "string",
+      "description": "Job title/role"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile image URL"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 10
+          }
+        }
+      },
+      "description": "Skills with proficiency levels (1-10)"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "available",
+        "busy",
+        "away",
+        "overloaded"
+      ],
+      "default": "available"
+    },
+    "current_workload": {
+      "type": "number",
+      "description": "Current hours of assigned work"
+    },
+    "max_capacity": {
+      "type": "number",
+      "default": 40,
+      "description": "Max weekly hours"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "content",
+        "design",
+        "growth",
+        "analytics",
+        "leadership"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "email"
+  ]
+}

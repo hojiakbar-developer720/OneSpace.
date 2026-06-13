@@ -1,0 +1,81 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Task title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed task description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "backlog",
+        "todo",
+        "in_progress",
+        "review",
+        "done"
+      ],
+      "default": "backlog",
+      "description": "Current task status"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ],
+      "default": "medium"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "content",
+        "design",
+        "social_media",
+        "seo",
+        "analytics",
+        "email",
+        "ads",
+        "branding",
+        "video",
+        "strategy"
+      ],
+      "description": "Marketing category"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "Email of assigned team member"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "estimated_hours": {
+      "type": "number",
+      "description": "Estimated hours to complete"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skills_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills needed for this task"
+    }
+  },
+  "required": [
+    "title",
+    "status"
+  ]
+}
